@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,18 +16,30 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { complex128ndarray, typedndarray } from '@stdlib/types/ndarray';
+import { Complex128 } from '@stdlib/types/complex';
 
 /**
-* Subtract a scalar constant from each element in a one-dimensional double-precision complex floating-point ndarray.
+* Subtracts a scalar constant from each element in a one-dimensional double-precision complex floating-point ndarray.
 *
-* @module @stdlib/blas-ext-base-ndarray-zxsa
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional ndarray containing the scalar constant to subtract.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns input ndarray
 *
 * @example
 * var Complex128Vector = require( '@stdlib/ndarray-vector-complex128' );
 * var Complex128 = require( '@stdlib/complex-float64-ctor' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var zxsa = require( '@stdlib/blas-ext-base-ndarray-zxsa' );
 *
 * var x = new Complex128Vector( [ -2.0, 1.0, 3.0, -5.0 ] );
 *
@@ -38,12 +50,9 @@
 * var out = zxsa( [ x, alpha ] );
 * // returns <ndarray>[ <Complex128>[ -7.0, 1.0 ], <Complex128>[ -2.0, -5.0 ] ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function zxsa( arrays: [ complex128ndarray, typedndarray<Complex128> ] ): complex128ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = zxsa;
